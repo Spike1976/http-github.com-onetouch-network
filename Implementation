@@ -1,7 +1,4 @@
-Here are the steps for setting up the XRP Ledger and implementing the OneTouch Network project on the blockchain:
-
-
----
+Here are the steps for setting up the XRP 
 
 Step 1: Understanding XRP Ledger
 
@@ -287,9 +284,4 @@ Use encrypted .env files for sensitive keys.
 
 Implement SSL for secure communication between backend and frontend.
 
-
-
----
-
-Let me know if you need detailed implementation for specific features!
 
