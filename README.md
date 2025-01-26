@@ -97,50 +97,6 @@ Blockchain Integration: Built on the XRP Ledger for high-speed, low-cost transac
 
 Open-Source Collaboration: Welcomes contributions to enhance functionality and customization.
 
-
-
----
-
-File Structure
-
-onetouch-network/
-├── backend/                     # Backend services and APIs
-│   ├── server.js                # Main backend server
-│   ├── routes/                  # API routes
-│   │   ├── sdr.js               # SDR-related endpoints
-│   │   ├── auth.js              # Biometric authentication endpoints
-│   │   ├── proxy.js             # Proxy address management
-│   │   └── did.js               # DID management endpoints
-│   └── services/                # Core service logic
-│       ├── sdrService.js        # SDR split, route, and reassemble logic
-│       ├── proxyService.js      # Proxy address generation and management
-│       ├── biometricService.js  # Biometric hashing and verification
-│       └── identityService.js   # DID creation and resolution
-├── frontend/                    # Frontend application
-│   ├── public/                  # Static files
-│   │   └── index.html           # Landing page
-│   ├── src/
-│   │   ├── App.js               # Main React app
-│   │   ├── components/          # React components
-│   │   │   ├── SDRVote.js       # Voting UI
-│   │   │   ├── SDRStatus.js     # Transaction status UI
-│   │   │   ├── BiometricAuth.js # Biometric authentication UI
-│   │   │   └── DIDManager.js    # DID management UI
-│   │   ├── styles/              # CSS styles
-│   │   └── utils/               # API utilities
-│   │       └── api.js
-├── docs/                        # Documentation
-│   ├── installation.md          # Installation guide
-│   ├── contributing.md          # Contribution guidelines
-│   ├── api.md                   # API documentation
-│   └── whitepaper.md            # Project white paper
-├── LICENSE                      # Open-source license (e.g., MIT)
-├── README.md                    # Project overview
-└── .gitignore                   # Excluded files
-
-
----
-
 Getting Started
 
 1. Clone the Repository
