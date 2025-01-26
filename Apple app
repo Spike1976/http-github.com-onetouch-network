@@ -1,0 +1,80 @@
+Here is the implementation of an iOS app using Swift and Core Data for local storage. This app allows users to add, view, and delete data securely on their device.
+
+
+---
+
+File Structure
+
+LocalStorageApp/
+├── LocalStorageApp/
+│   ├── AppDelegate.swift         # Application lifecycle management
+│   ├── SceneDelegate.swift       # Scene lifecycle management
+│   ├── ContentView.swift         # Main app entry point
+│   ├── DataView.swift            # View for displaying stored data
+│   ├── AddDataView.swift         # View for adding new data
+│   ├── CoreDataHelper.swift      # Core Data management
+│   ├── Models/
+│   │   ├── DataItem.swift        # Core Data model
+├── LocalStorageApp.xcodeproj/    # Xcode project configuration
+├── LocalStorageApp.xcdatamodeld/ # Core Data model schema
+
+
+---
+
+Step 1: Create the Xcode Project
+
+1. Open Xcode and create a new project:
+
+Select "App".
+
+Name the project LocalStorageApp.
+
+Set the interface to SwiftUI.
+
+Enable Core Data.
+
+
+
+2. Save the project to a directory.
+
+
+
+
+---
+
+Step 2: Core Data Setup
+
+Core Data is automatically integrated when you enable it during project setup. Below are the necessary additions:
+
+
+---
+
+1. Core Data Helper
+
+Path: CoreDataHelper.swift
+
+import Foundation
+import CoreData
+
+class CoreDataHelper {
+    static let shared = CoreDataHelper()
+    let context: NSManagedObjectContext
+
+    private init() {
+        context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    }
+
+    func saveData(key: String, value: String) {
+        let dataItem = DataItem(context: context)
+        dataItem.key = key
+        dataItem.value = value
+        saveContext()
+    }
+
+    func fetchAllData() -> [DataItem] {
+        let request: NSFetchRequest<DataItem> = DataItem.fetchRequest()
+        do {
+            return try context.fetch(request)
+        } catch {
+            print("Error fetching data:
+
